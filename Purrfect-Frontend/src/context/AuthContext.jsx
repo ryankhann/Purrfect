@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   // On mount / token change, fetch current user
   useEffect(() => {
     if (token) {
-      fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/me`, {
+      fetch(`${import.meta.env.VITE_API_URL || 'https://purrfect-backend-f78x.onrender.com'}/api/auth/me`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => {
