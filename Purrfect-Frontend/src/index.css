@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.animate-slow-zoom { animation: slowZoom 22s infinite alternate; }
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in { animation: slideInRight 0.3s ease-out; }
+
+/* Wishlist heart animation (if needed) */
+.wishlist-btn.active i { color: #ff4d4d; transform: scale(1.2); }
+
+/* Gallery overlay hover */
+.gallery-overlay { opacity: 0; transition: opacity 0.3s; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay i { transform: translateY(16px); transition: transform 0.3s; }
+.gallery-item:hover .gallery-overlay i { transform: translateY(0); }
+
+/* Hide scrollbar for slider */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
