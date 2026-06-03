@@ -11,13 +11,31 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// VERIFY CONNECTION
+transporter.verify((error, success) => {
+  if (error) {
+    console.log('❌ Gmail Error:', error);
+  } else {
+    console.log('✅ Gmail Server Ready');
+  }
+});
+
 const sendEmail = async (to, subject, html) => {
-  await transporter.sendMail({
-    from: `"Purrfect 🐱" <${process.env.EMAIL_USER}>`,
-    to,
-    subject,
-    html,
-  });
+  try {
+    const info = await transporter.sendMail({
+      from: `"Purrfect 🐱" <${process.env.EMAIL_USER}>`,
+      to,
+      subject,
+      html,
+    });
+
+    console.log('✅ Email Sent:', info.response);
+
+  } catch (error) {
+    console.log('❌ Email Sending Failed');
+    console.log(error);
+    throw error;
+  }
 };
 
 export default sendEmail;
