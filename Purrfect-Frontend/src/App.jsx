@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Wishlist from "./pages/Wishlist";
-import Cart from "./pages/cart";
+import Cart from "./pages/Cart";
 import Account from "./pages/Account";
 import MaineCoon from "./pages/breeds/MaineCoon";
 import Persian from './pages/breeds/Persian';
